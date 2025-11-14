@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>sachotech Solutions — SPA slide (bottom→top)</title>
+<link rel="stylesheet" href="my web.css">
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">Sachotech Solutions</h1>
+
+      <!-- Hamburger -->
+      <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</div>
+
+      <nav id="nav-menu" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#home" data-target="home">Home</a></li>
+          <li><a href="#services" data-target="services">Services</a></li>
+          <li><a href="#portfolio" data-target="portfolio">Portfolio</a></li>
+          <li><a href="#about" data-target="about">About Us</a></li>
+          <li><a href="#contact" data-target="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content wrapper for SPA pages -->
+  <main id="main" role="main">
+    <!-- Each of these is a "page" -->
+    <section id="home" class="hero page-section" aria-labelledby="home-heading">
+      <div class="hero-content">
+        <h2 id="home-heading">Your Trusted Web Development Partner</h2>
+        <p>We build beautiful, functional, and scalable websites that grow your business.</p>
+        <p>
+          <img src="WhatsApp Image 2025-11-11 at 09.50.25.jpeg" alt="sachotech solutions Founder" class="founder">
+          <figcaption>The Founder of sachotech solutions</figcaption>
+        </p>
+<a href="#contact" class="cta-btn" data-target="contact">Get in Touch</a>
+      </div>
+    </section>
+
+    <section id="services" class="services page-section" aria-labelledby="services-heading">
+      <div class="container">
+        <p><h2 id="services-heading">Our Services</h2></p>
+        <div class="service-item">
+          <h3>Web Design</h3>
+          <p>Responsive, user-friendly websites that engage your audience.</p>
+        </div>
+        <div class="service-item">
+          <h3>Web Development</h3>
+          <p>Custom websites and web applications with speed & scalability.</p>
+        </div>
+        <div class="service-item">
+          <h3>E-Commerce Solutions</h3>
+          <p>High-performance online stores with secure payments.</p>
+        </div>
+        <div class="service-item">
+          <h3>Software Development</h3>
+          <p>Custom desktop & web software tailored to your needs.</p>
+        </div>
+        <div class="service-item">
+          <h3>Programming & Automation</h3>
+          <p>Automate workflows and integrate third-party services.</p>
+        </div>
+        <div class="service-item">
+          <h3>IT & Network Solutions</h3>
+          <p>Network configuration & management (including MikroTik).</p>
+        </div>
+      </div>
+    </section>
+
+<section id="portfolio" class="portfolio page-section" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <h2 id="portfolio-heading">Our Portfolio</h2>
+        <div class="portfolio-gallery">
+        </div>
+      </div>
+    </section>    
+
+    <section id="about" class="about-us page-section" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading">About sachotech Solutions</h2>
+        <p>
+          Sachotech Solutions is a professional web and software development company founded by
+          <strong><a href="#">Samuel Chomba Mwaniki</a></strong>, a passionate developer with front-end and back-end expertise.
+          We build websites, web apps, and custom software with ongoing support to ensure success.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact page-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading">Contact Us</h2>
+        <div class="contact-info">
+          <p><strong>Email:</strong> sachotechsolutions@gmail.com</p>
+          <p><strong>Phone:</strong> +254 791 577 972</p>
+          <p><strong>Whatsapp:</strong><a href="https://wa.me/254791577972?text=Can%20I%20get%20more%20info%20about%20web%20development%20services"> chat Whatsapp</a> 
+</p>
+          <p><strong>Location:</strong> Murang’a, Kenya</p>
+        </div>
+
+      <form class="contact-form" action="https://formsubmit.co/sachotechsolutions@gmail.com" method="POST" aria-label="Contact form">
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text" placeholder="Your name" required />
+
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+
+  <!-- Optional hidden inputs -->
+  <input type="hidden" name="_next" value="thankyou.html">
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit">Send Message</button>
+</form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 sachotech Solutions. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61583329182791" aria-label="Facebook">Facebook</a>
+        <a href="https://www.tiktok.com/@sachotech.solutio?_r=1&_t=ZM-91O6JJZ9VIO" aria-label="TikTok">Tiktok</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="WhatsApp">Whatsapp</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+/* SPA navigation for all data-target links */
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+const sections = document.querySelectorAll('.page-section');
+
+let currentSection = null;
+let isAnimating = false;
+
+function byId(id) { return document.getElementById(id); }
+
+function openSection(targetId) {
+  if (isAnimating) return;
+  const target = byId(targetId);
+  if (!target || (currentSection && currentSection.id === targetId)) return;
+
+  isAnimating = true;
+  const previous = currentSection;
+
+  target.classList.remove('exit-to-top','enter-to');
+  target.classList.add('enter-from-bottom');
+
+  // force repaint
+  target.getBoundingClientRect();
+
+  if (previous) {
+    previous.classList.remove('enter-from-bottom','enter-to');
+    previous.classList.add('exit-to-top');
+
+    previous.addEventListener('transitionend', function onPrevEnd(e) {
+      if (e.propertyName !== 'transform') return;
+      previous.removeEventListener('transitionend', onPrevEnd);
+      previous.classList.remove('active','exit-to-top');
+    });
+  }
+
+  requestAnimationFrame(() => {
+    target.classList.remove('enter-from-bottom');
+    target.classList.add('enter-to','active');
+
+    target.addEventListener('transitionend', function onTargetEnd(e) {
+      if (e.propertyName !== 'transform') return;
+      target.removeEventListener('transitionend', onTargetEnd);
+      target.classList.remove('enter-to');
+      isAnimating = false;
+    });
+  });
+
+  currentSection = target;
+
+  // close mobile menu if open
+  navMenu.classList.remove('active');
+  menuToggle.classList.remove('open');
+
+  // update URL hash without scrolling
+  const newHash = '#' + targetId;
+  if (location.hash !== newHash) history.pushState(null,'',newHash);
+}
+
+/* Attach SPA behavior to all data-target links */
+document.querySelectorAll('a[data-target]').forEach(link => {
+  link.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    const id = link.getAttribute('data-target');
+    openSection(id);
+  });
+});
+
+/* Hamburger toggle */
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+  menuToggle.classList.toggle('open');
+});
+
+/* Handle back/forward */
+window.addEventListener('popstate', () => {
+  const id = location.hash ? location.hash.substring(1) : 'home';
+  openSection(id);
+});
+
+/* Initialize SPA on DOM ready */
+document.addEventListener('DOMContentLoaded', () => {
+  sections.forEach(s => s.classList.remove('active','enter-from-bottom','enter-to','exit-to-top'));
+  const initialId = location.hash ? location.hash.substring(1) : 'home';
+  const initial = byId(initialId) || byId('home');
+  initial.classList.add('active');
+  currentSection = initial;
+});
+
+const portfolioItems = [
+  {
+    title: "Edenfield Academy Portal",
+    description: "School web & student management.",
+    imgSrc: "webpic1.png",
+    alt: "Edenfield Academy Portal"
+  },
+  {
+    title: "Comrades Marketplace",
+    description: "Student-focused e-commerce.",
+    imgSrc: "webpic1.png",
+    alt: "Comrades Marketplace"
+  },
+  {
+    title: "Billing System",
+    description: "Network billing & usage tracking for ISPs.",
+    imgSrc: "webpic1.png",
+    alt: "Billing System"
+  }
+];
+
+// Select the gallery container
+const gallery = document.querySelector('.portfolio-gallery');
+
+// Clear any existing content (optional)
+gallery.innerHTML = '';
+
+// Loop through portfolio items and create elements
+portfolioItems.forEach(item => {
+  const div = document.createElement('div');
+  div.classList.add('portfolio-item');
+
+  div.innerHTML = `
+    <img src="${item.imgSrc}" alt="${item.alt}">
+    <p><strong>${item.title}</strong> — ${item.description}</p>
+  `;
+
+  gallery.appendChild(div);
+});
+
+</script>
+</body>
+</html>
