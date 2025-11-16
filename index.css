@@ -91,10 +91,49 @@ h2 {
 }
 h3 { margin-bottom: 15px; color: #16A085; }
 
+
 /* -------------------------
-   ABOUT, SERVICES, CONTACT
+   ABOUT SECTION
 -------------------------- */
-.about-us, .services, .contact { padding: 50px 0; }
+.about-us {
+  background-color: #fff; /* clean background for focus */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  padding: 50px 30px;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.about-us h2 {
+  font-size: 32px;
+  color: #2C3E50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-us p {
+  font-size: 18px;
+  color: #4A4A4A;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-us ul {
+  list-style: disc inside;
+  margin-left: 20px;
+  color: #4A4A4A;
+}
+
+.about-us ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* emphasize strong points */
+.about-us strong {
+  color: #1ABC9C;
+}
+
 
 /* -------------------------
    SERVICES SECTION
