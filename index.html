@@ -131,7 +131,7 @@
       <div class="social-links">
         <a href="https://www.facebook.com/profile.php?id=61583329182791" aria-label="Facebook">Facebook</a>
         <a href="https://www.tiktok.com/@sachotech.solutio?_r=1&_t=ZM-91O6JJZ9VIO" aria-label="TikTok">Tiktok</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/samuel-chomba-6871b2337/" aria-label="LinkedIn">LinkedIn</a>
         <a href="https://wa.me/254791577972" aria-label="WhatsApp">Whatsapp</a>
       </div>
     </div>
@@ -225,37 +225,32 @@ document.addEventListener('DOMContentLoaded', () => {
   initial.classList.add('active');
   currentSection = initial;
 });
-
 const portfolioItems = [
   {
-    title: "Edenfield Academy Portal",
-    description: "School web & student management.",
-    imgSrc: "webpic1.png",
-    alt: "Edenfield Academy Portal"
+    title: "Edenfield Academy Website and Portal",
+    description: "School web & School portal",
+    imgSrc: "Edenfield_homepage_image.png",
+    alt: "Edenfield Academy Portal",
+    link: "" // Add link here if you want
   },
   {
     title: "Comrades Marketplace",
     description: "Student-focused e-commerce.",
-    imgSrc: "webpic1.png",
-    alt: "Comrades Marketplace"
-  },
-  {
-    title: "Billing System",
-    description: "Network billing & usage tracking for ISPs.",
-    imgSrc: "webpic1.png",
-    alt: "Billing System"
+    imgSrc: "marketplace_image.png",
+    alt: "Comrades Marketplace",
+    link: ""
   }
 ];
 
-// Select the gallery container
 const gallery = document.querySelector('.portfolio-gallery');
 
-// Clear any existing content (optional)
+// Clear any existing content
 gallery.innerHTML = '';
 
-// Loop through portfolio items and create elements
 portfolioItems.forEach(item => {
-  const div = document.createElement('div');
+  const div = document.createElement('a');
+  div.href = item.link || "#";
+  div.target = "_blank";
   div.classList.add('portfolio-item');
 
   div.innerHTML = `
@@ -265,6 +260,7 @@ portfolioItems.forEach(item => {
 
   gallery.appendChild(div);
 });
+
 
 </script>
 </body>

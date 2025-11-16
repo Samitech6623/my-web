@@ -276,4 +276,9 @@ header, footer { position: relative; z-index: 1000; }
 /* small tweak for images inside hero to remain responsive in this layout */
 .hero .founder { display: inline-block; margin: 20px auto; }
 
+
+.portfolio-gallery a{
+  text-decoration: none;
+}
+
 /* end of CSS */

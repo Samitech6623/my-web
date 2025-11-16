@@ -44,13 +44,3 @@ Thumbs.db
 media/
 uploads/
 
-# Ignore all image files (if you don’t want *any* images tracked)
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.bmp
-*.tiff
-*.svg
-
-
